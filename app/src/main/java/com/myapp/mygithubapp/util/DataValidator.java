@@ -1,7 +1,5 @@
 package com.myapp.mygithubapp.util;
 
-import android.text.TextUtils;
-import android.util.Log;
 import com.myapp.mygithubapp.R;
 import com.myapp.mygithubapp.model.repo.Repo;
 import java.util.ArrayList;
