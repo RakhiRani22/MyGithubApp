@@ -18,10 +18,11 @@ public class DataValidator {
      * @return
      */
     public static boolean isRepositoryFound(ArrayList<Repo> repositoryList, String repositoryName) {
-        for (Repo repositoryInstance : repositoryList) {
-            if (repositoryInstance.getName().equalsIgnoreCase(repositoryName)) {
-                Log.i(TAG, "Repository found successfully!");
-                return true;
+        if ((repositoryList != null) && (!repositoryList.isEmpty())) {
+            for (Repo repositoryInstance : repositoryList) {
+                if (repositoryInstance.getName().equalsIgnoreCase(repositoryName)) {
+                    return true;
+                }
             }
         }
         return false;
@@ -32,7 +33,6 @@ public class DataValidator {
      * This string will be used to display message to the user in case the response is not valid
      * @param response
      * @return
-     *
      */
     public static int getMessageOnResponseReceived(Response<List<Repo>> response) {
         int messageId = R.string.invalid_response;
@@ -62,12 +62,14 @@ public class DataValidator {
      * @param userInput
      * @return true if not empty else false
      */
-    public static boolean isUserInputValid(String userInput){
-        if(TextUtils.isEmpty(userInput) == true) {
-            return false;
+    public static boolean isUserInputValid(String userInput) {
+        if (userInput != null) {
+            if (userInput.isEmpty() == true) {
+                return false;
+            } else {
+                return true;
+            }
         }
-        else {
-            return true;
-        }
+        return false;
     }
 }
