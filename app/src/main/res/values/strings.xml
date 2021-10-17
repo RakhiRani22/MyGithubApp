@@ -1,3 +1,16 @@
 <resources>
     <string name="app_name">MyGithubApp</string>
+    <string name="hint_username">Username</string>
+    <string name="hint_repo">Repository Name</string>
+    <string name="display_commits">Display Commits</string>
+    <string name="display_default_commits">Display Default Commits</string>
+    <string name="detail_message">Enter the details below:</string>
+    <string name="repository_not_found">The repository is not found!</string>
+    <string name="repo_request_failed">The request to fetch repo data has failed!</string>
+    <string name="valid_response">Valid Response</string>
+    <string name="two_factor_auth">Two-factor authentication is active, please enter code</string>
+    <string name="limit_exceeded">Maximum number of login attempts exceeded. Please try again later</string>
+    <string name="invalid_username">Cannot fetch data from GitHub! Please verify the username"</string>
+    <string name="invalid_repository">Empty response! No public repository for this user fetched</string>
+    <string name="invalid_response">Response received is not valid!</string>
 </resources>
