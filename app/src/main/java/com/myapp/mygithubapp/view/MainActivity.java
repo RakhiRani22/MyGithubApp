@@ -1,4 +1,4 @@
-package com.myapp.mygithubapp.ui;
+package com.myapp.mygithubapp.view;
 
 import androidx.appcompat.app.AppCompatActivity;
 
