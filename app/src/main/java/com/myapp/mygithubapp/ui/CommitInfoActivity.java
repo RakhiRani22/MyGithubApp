@@ -4,6 +4,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import com.myapp.mygithubapp.R;
 
+/**
+ * This activity shall display the list of commit information of a specific
+ * user and repo
+ */
 public class CommitInfoActivity extends AppCompatActivity {
 
     @Override
