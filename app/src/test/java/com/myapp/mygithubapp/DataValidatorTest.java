@@ -51,4 +51,44 @@ public class DataValidatorTest {
         ArrayList<Repo> list = null;
         assertEquals(false, DataValidator.isRepositoryFound(list, "Sample"));
     }
+
+    @Test
+    public void validateConcatenatedString_FirstStringNull(){
+        String firstString = null;
+        String secondString = "Commit Message";
+        String expectedString = "Commit Message";
+        assertEquals(expectedString, DataValidator.getConcatenatedString(firstString, secondString));
+    }
+
+    @Test
+    public void validateConcatenatedString_SecondStringNull(){
+        String firstString = "Commit Message";
+        String secondString = null;
+        String expectedString = "Commit Message";
+        assertEquals(expectedString, DataValidator.getConcatenatedString(firstString, secondString));
+    }
+
+    @Test
+    public void validateConcatenatedString_FirstStringEmpty(){
+        String firstString = "";
+        String secondString = "Commit Message";
+        String expectedString = "Commit Message";
+        assertEquals(expectedString, DataValidator.getConcatenatedString(firstString, secondString));
+    }
+
+    @Test
+    public void validateConcatenatedString_SecondStringEmpty(){
+        String firstString = "Commit Message";
+        String secondString = "";
+        String expectedString = "Commit Message";
+        assertEquals(expectedString, DataValidator.getConcatenatedString(firstString, secondString));
+    }
+
+    @Test
+    public void validateConcatenatedString_ValidStrings(){
+        String firstString = "Author: ";
+        String secondString = "RakhiRani22";
+        String expectedString = "Author: RakhiRani22";
+        assertEquals(expectedString, DataValidator.getConcatenatedString(firstString, secondString));
+    }
 }
