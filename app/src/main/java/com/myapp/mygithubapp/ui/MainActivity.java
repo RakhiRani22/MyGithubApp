@@ -119,7 +119,7 @@ public class MainActivity extends AppCompatActivity {
      *
      * @param username
      * @param repositoryName
-     * The method displys the list of commits if repository found else display
+     * The method displays the list of commits if repository found else display
      * the message that "Repository not found"
      */
     private void handleRepoResponse(String username, String repositoryName){

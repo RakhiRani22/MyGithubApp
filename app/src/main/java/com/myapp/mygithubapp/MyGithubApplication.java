@@ -25,9 +25,5 @@ public class MyGithubApplication extends Application {
     public ApiComponent getNetComponent() {
         return apiComponent;
     }
-
-    public void displayToast(String message){
-        Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
-    }
 }
 
