@@ -70,4 +70,17 @@ public class DataValidator {
         }
         return false;
     }
+
+    public static String getConcatenatedString(String firstString, String secondString){
+        if(firstString == null || firstString.isEmpty()){
+            return secondString;
+        }
+        else if(secondString == null || secondString.isEmpty()){
+            return firstString;
+        }
+        else {
+            StringBuffer stringBuffer = new StringBuffer(firstString).append(secondString);
+            return stringBuffer.toString();
+        }
+    }
 }

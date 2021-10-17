@@ -9,6 +9,8 @@ import android.widget.TextView;
 import androidx.recyclerview.widget.RecyclerView;
 import com.myapp.mygithubapp.R;
 import com.myapp.mygithubapp.model.commit.CommitInformation;
+import com.myapp.mygithubapp.util.Constants;
+import com.myapp.mygithubapp.util.DataValidator;
 import java.util.List;
 
 /**
@@ -34,9 +36,9 @@ public class CommitInfoAdapter extends RecyclerView.Adapter<CommitInfoAdapter.Vi
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
         CommitInformation commitInformation = commitInformationList.get(position);
-        holder.authorNameText.setText(commitInformation.getCommit().getAuthor().getName());
-        holder.commitHashText.setText(commitInformation.getSha());
-        holder.commitMessageText.setText(commitInformation.getCommit().getMessage());
+        holder.authorNameText.setText(DataValidator.getConcatenatedString(Constants.AUTHOR, commitInformation.getCommit().getAuthor().getName()));
+        holder.commitHashText.setText(DataValidator.getConcatenatedString(Constants.HASH, commitInformation.getSha()));
+        holder.commitMessageText.setText(DataValidator.getConcatenatedString(Constants.MESSAGE, commitInformation.getCommit().getMessage()));
     }
 
     @Override
