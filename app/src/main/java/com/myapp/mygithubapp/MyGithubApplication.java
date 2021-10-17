@@ -1,7 +1,6 @@
 package com.myapp.mygithubapp;
 
 import android.app.Application;
-import android.widget.Toast;
 import com.myapp.mygithubapp.component.ApiComponent;
 import com.myapp.mygithubapp.component.DaggerApiComponent;
 import com.myapp.mygithubapp.module.ApiModule;

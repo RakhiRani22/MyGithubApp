@@ -1,7 +1,6 @@
 package com.myapp.mygithubapp.view;
 
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -28,7 +27,7 @@ This Activity class has 2 options:
 1. To display the commit information with the default userName and repo name.
 2. To display the commit information from the user input username and repo name.
  */
-public class MainActivity extends AppCompatActivity {
+public class UserInputActivity extends AppCompatActivity {
     private static final String TAG = "MainActivity";
     private ArrayList<Repo> repoList = null;
 
@@ -128,7 +127,7 @@ public class MainActivity extends AppCompatActivity {
         Log.i(TAG, "Response received");
         if(DataValidator.isRepositoryFound(repoList, repositoryName)){
             Log.d(TAG,"Repository Found");
-            Intent intent = new Intent(MainActivity.this, CommitInfoActivity.class);
+            Intent intent = new Intent(UserInputActivity.this, CommitInfoActivity.class);
             intent.putExtra(Constants.USERNAME, username);
             intent.putExtra(Constants.REPOSITORY_NAME, repositoryName);
             startActivity(intent);
@@ -141,6 +140,6 @@ public class MainActivity extends AppCompatActivity {
     private void displayToast(int stringId){
         String message = getResources().getString(stringId);
         Log.i(TAG, "String to display:"+message);
-        Toast.makeText(MainActivity.this, message, Toast.LENGTH_SHORT).show();
+        Toast.makeText(UserInputActivity.this, message, Toast.LENGTH_SHORT).show();
     }
 }
