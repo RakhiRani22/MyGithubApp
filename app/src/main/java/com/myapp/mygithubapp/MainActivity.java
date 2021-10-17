@@ -49,6 +49,16 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 String username = usernameText.getText().toString();
                 String repositoryName = repoNameText.getText().toString();
+
+                if(DataValidator.isUserInputValid(username) == false) {
+                    displayToast(R.string.enter_valid_username);
+                }
+                else if(DataValidator.isUserInputValid(repositoryName) == false) {
+                    displayToast(R.string.enter_valid_repo_name);
+                }
+                else {
+                    getRepoDataForUsername(username, repositoryName);
+                }
             }
         });
 
@@ -88,6 +98,10 @@ public class MainActivity extends AppCompatActivity {
                         repoList.addAll(repositoryList);
                         handleRepoResponse(username, repositoryName);
                     }
+                    else
+                    {
+                        displayToast(R.string.repository_not_found); //When response is empty array with success code
+                    }
                 }
             }
 
@@ -118,6 +132,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void displayToast(int stringId){
-        Toast.makeText(MainActivity.this, getResources().getString(stringId), Toast.LENGTH_SHORT).show();
+        String message = getResources().getString(stringId);
+        Log.i(TAG, "String to display:"+message);
+        Toast.makeText(MainActivity.this, message, Toast.LENGTH_SHORT).show();
     }
 }

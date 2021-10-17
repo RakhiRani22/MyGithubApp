@@ -13,4 +13,6 @@
     <string name="invalid_username">Cannot fetch data from GitHub! Please verify the username"</string>
     <string name="invalid_repository">Empty response! No public repository for this user fetched</string>
     <string name="invalid_response">Response received is not valid!</string>
+    <string name="enter_valid_username">Enter a valid username!</string>
+    <string name="enter_valid_repo_name">Enter a valid repository name!</string>
 </resources>

@@ -1,5 +1,6 @@
 package com.myapp.mygithubapp.util;
 
+import android.text.TextUtils;
 import android.util.Log;
 import com.myapp.mygithubapp.R;
 import com.myapp.mygithubapp.model.repo.Repo;
@@ -11,11 +12,10 @@ public class DataValidator {
     private static final String TAG = "DataValidator";
 
     /**
-     *
+     * This method returns true if the repository is found in the list else returns false
      * @param repositoryList
      * @param repositoryName
      * @return
-     * This method returns true if the repository is found in the list else returns false
      */
     public static boolean isRepositoryFound(ArrayList<Repo> repositoryList, String repositoryName) {
         for (Repo repositoryInstance : repositoryList) {
@@ -28,14 +28,14 @@ public class DataValidator {
     }
 
     /**
-     *
-     * @param response
-     * @return
      * This method returns corresponding string id on the response received.
      * This string will be used to display message to the user in case the response is not valid
+     * @param response
+     * @return
+     *
      */
     public static int getMessageOnResponseReceived(Response<List<Repo>> response) {
-        int messageId = 0;
+        int messageId = R.string.invalid_response;
 
         if (response != null) {
             if (response.code() == 401) {
@@ -54,7 +54,20 @@ public class DataValidator {
             messageId = R.string.invalid_response;//"Response is null!";
         }
 
-        Log.i(TAG, "Error Message:"+messageId);
         return messageId;
+    }
+
+    /**
+     * This method validates if the user input is empty
+     * @param userInput
+     * @return true if not empty else false
+     */
+    public static boolean isUserInputValid(String userInput){
+        if(TextUtils.isEmpty(userInput) == true) {
+            return false;
+        }
+        else {
+            return true;
+        }
     }
 }
