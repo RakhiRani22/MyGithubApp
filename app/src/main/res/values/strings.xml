@@ -15,4 +15,8 @@
     <string name="invalid_response">Response received is not valid!</string>
     <string name="enter_valid_username">Enter a valid username!</string>
     <string name="enter_valid_repo_name">Enter a valid repository name!</string>
+
+    <string name="commit_info_request_failed">The request to fetch commit information data has failed!</string>
+    <string name="no_commit_performed">No commit performed for this repository!</string>
+    <string name="repo">Repo:</string>
 </resources>

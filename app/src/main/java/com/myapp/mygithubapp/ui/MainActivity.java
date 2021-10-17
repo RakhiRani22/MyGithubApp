@@ -1,6 +1,8 @@
 package com.myapp.mygithubapp.ui;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -126,7 +128,10 @@ public class MainActivity extends AppCompatActivity {
         Log.i(TAG, "Response received");
         if(DataValidator.isRepositoryFound(repoList, repositoryName)){
             Log.d(TAG,"Repository Found");
-            displayToast(R.string.valid_response);
+            Intent intent = new Intent(MainActivity.this, CommitInfoActivity.class);
+            intent.putExtra(Constants.USERNAME, username);
+            intent.putExtra(Constants.REPOSITORY_NAME, repositoryName);
+            startActivity(intent);
         }
         else {
             displayToast(R.string.repository_not_found);
