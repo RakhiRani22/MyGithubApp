@@ -1,4 +1,4 @@
-package com.myapp.mygithubapp;
+package com.myapp.mygithubapp.ui;
 
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
@@ -7,6 +7,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+import com.myapp.mygithubapp.MyGithubApplication;
+import com.myapp.mygithubapp.R;
 import com.myapp.mygithubapp.model.repo.Repo;
 import com.myapp.mygithubapp.network.Api;
 import com.myapp.mygithubapp.util.Constants;
